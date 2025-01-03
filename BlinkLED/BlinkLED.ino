@@ -1,17 +1,31 @@
-// This sketch blinks the built-in LED on the Arduino board
+/**
+ * Blink
+ *
+ * Turns on an LED on for one second,
+ * then off for one second, repeatedly.
+ */
+#include "Arduino.h"
 
-// Define the pin number for the LED
-int ledPin = 13; // the Arduino pin that is connected to the LED
+// Set LED_BUILTIN if it is not defined by Arduino framework
+// #define LED_BUILTIN 13
 
-// The setup function runs once when you press reset or power the board
-void setup() {
-  pinMode(ledPin, OUTPUT); // Initialize the pin as an output
+void setup()
+{
+  // initialize LED digital pin as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
-// The loop function runs over and over again forever
-void loop() {
-  digitalWrite(ledPin, HIGH); // Turn the LED on (HIGH is the voltage level)
-  delay(1000); // Wait for a second (1000 milliseconds)
-  digitalWrite(ledPin, LOW); // Turn the LED off by making the voltage LOW
-  delay(1000); // Wait for a second
+void loop()
+{
+  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(LED_BUILTIN, HIGH);
+
+  // wait for a second
+  delay(1000);
+
+  // turn the LED off by making the voltage LOW
+  digitalWrite(LED_BUILTIN, LOW);
+
+   // wait for a second
+  delay(1000);
 }
